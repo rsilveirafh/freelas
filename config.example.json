@@ -1,0 +1,14 @@
+{
+  "projeto": "/caminho/absoluto/para/a/pasta/do/99freelas",
+  "perfil_verdade": "",
+  "subcategorias": [
+    "web-mobile-e-software/desenvolvimento-web",
+    "web-mobile-e-software/criacao-e-integracao-com-ia",
+    "administracao-e-contabilidade/analise-de-dados-e-estatistica"
+  ],
+  "paginas": 2,
+  "idade_max_dias": 15,
+  "premium": false,
+  "commit": true,
+  "mensagem_commit": "99freelas (AAAA-MM-DD): <resumo>"
+}

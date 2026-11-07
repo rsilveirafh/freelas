@@ -1,0 +1,6 @@
+.DS_Store
+Thumbs.db
+*.local.json
+/CLAUDE.md
+/.claude/
+__pycache__/

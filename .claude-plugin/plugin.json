@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
+  "name": "99freelas",
+  "displayName": "99freelas",
+  "version": "0.1.0",
+  "description": "Freela no 99freelas sem garimpar projeto um por um: /99freelas:coletar lê a listagem pública das suas subcategorias, dá nota de 0 a 10 com base no seu perfil e registra tudo; /99freelas:propor escreve valor, prazo e texto só com fatos seus. O agente propõe, você decide e você envia.",
+  "author": {
+    "name": "Ricardo Silveira",
+    "url": "https://github.com/rsilveirafh"
+  },
+  "homepage": "https://github.com/rsilveirafh/99freelas",
+  "repository": "https://github.com/rsilveirafh/99freelas",
+  "license": "MIT",
+  "keywords": ["99freelas", "freela", "freelancer", "propostas", "renda-extra"]
+}
