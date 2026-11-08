@@ -1,15 +1,15 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
-  "name": "99freelas",
-  "displayName": "99freelas",
-  "version": "0.2.0",
-  "description": "Freela no 99freelas sem garimpar projeto um por um: /99freelas:coletar lê a listagem pública das suas subcategorias, dá nota de 0 a 10 com base no seu perfil e registra tudo; /99freelas:propor escreve valor, prazo e texto só com fatos seus. O agente propõe, você decide e você envia.",
+  "name": "freelas",
+  "displayName": "Freelas",
+  "version": "0.3.0",
+  "description": "Freela em várias plataformas sem garimpar projeto um por um: /freelas:coletar junta os projetos do 99freelas e da Freelancer.com (automático), do Upwork (MCP oficial, sob demanda) e da Workana (links para abrir), dá nota de 0 a 10 com base no seu perfil e registra tudo; /freelas:propor escreve valor, prazo e texto no formato de cada plataforma, só com fatos seus. O agente propõe, você decide e você envia.",
   "author": {
     "name": "Ricardo Silveira",
     "url": "https://github.com/rsilveirafh"
   },
-  "homepage": "https://github.com/rsilveirafh/99freelas",
-  "repository": "https://github.com/rsilveirafh/99freelas",
+  "homepage": "https://github.com/rsilveirafh/freelas",
+  "repository": "https://github.com/rsilveirafh/freelas",
   "license": "MIT",
-  "keywords": ["99freelas", "freela", "freelancer", "propostas", "renda-extra"]
+  "keywords": ["freela", "freelancer", "99freelas", "upwork", "workana", "freelancer.com", "propostas", "renda-extra"]
 }

@@ -1,14 +1,59 @@
 {
-  "projeto": "/caminho/absoluto/para/a/pasta/do/99freelas",
+  "projeto": "/caminho/absoluto/para/a/pasta/de/freelas",
   "perfil_verdade": "",
-  "subcategorias": [
-    "web-mobile-e-software/desenvolvimento-web",
-    "web-mobile-e-software/criacao-e-integracao-com-ia",
-    "administracao-e-contabilidade/analise-de-dados-e-estatistica"
-  ],
-  "paginas": 2,
   "idade_max_dias": 15,
-  "premium": false,
+  "plataformas": {
+    "99freelas": {
+      "subcategorias": [
+        "web-mobile-e-software/desenvolvimento-web",
+        "administracao-e-contabilidade/analise-de-dados-e-estatistica"
+      ],
+      "paginas": 2,
+      "premium": false
+    },
+    "freelancer": {
+      "consultas": [
+        "next.js",
+        "data analysis",
+        "power bi"
+      ],
+      "idiomas": [
+        "en",
+        "pt"
+      ],
+      "habilidades": [
+        "Next.js",
+        "React.js",
+        "Data Analysis",
+        "Statistics",
+        "Power BI",
+        "Landing Pages"
+      ],
+      "excluir_habilidades": [
+        "WordPress",
+        "PHP",
+        "Data Entry"
+      ],
+      "orcamento_min_usd": 300,
+      "hora_min_usd": 20,
+      "limite": 50
+    },
+    "upwork": {
+      "consultas": [
+        "next.js",
+        "data analysis R",
+        "AI agent"
+      ],
+      "orcamento_min_usd": 300,
+      "hora_min_usd": 25
+    },
+    "workana": {
+      "filtros": [
+        "it-programming/web-development",
+        "it-programming/data-science-1"
+      ]
+    }
+  },
   "commit": true,
-  "mensagem_commit": "99freelas (AAAA-MM-DD): <resumo>"
+  "mensagem_commit": "freelas (AAAA-MM-DD): <resumo>"
 }

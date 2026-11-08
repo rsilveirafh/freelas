@@ -1,4 +1,4 @@
-# Perfil no 99freelas
+# Perfil nas plataformas de freela
 
 Cópia do que está na plataforma. Se mudar lá, mude aqui.
 
