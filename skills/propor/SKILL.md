@@ -1,6 +1,6 @@
 ---
 name: propor
-description: Escreve a proposta para um projeto de freela (99freelas, Upwork, Freelancer.com, Workana ou outro) com valor, prazo e texto no formato da plataforma, só com fatos do perfil; registra o envio e o resultado em projetos.md e, quando o projeto é entregue, transforma-o num fato novo para o perfil. Não envia nada.
+description: Escreve a proposta para um projeto de freela (99freelas, Upwork, Freelancer.com, Workana, Kolabtree ou outro) com valor, prazo e texto no formato da plataforma, só com fatos do perfil; registra o envio e o resultado em projetos.md e, quando o projeto é entregue, transforma-o num fato novo para o perfil. Não envia nada.
 argument-hint: "[link ou nome do projeto] | enviei [projeto] | resultado [projeto] [ganhei/perdi/sem resposta/entreguei]"
 disable-model-invocation: true
 allowed-tools: Read, Write, Edit, Glob, Grep, WebFetch, Bash(git *), mcp__upwork__*

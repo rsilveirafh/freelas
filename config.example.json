@@ -52,6 +52,12 @@
         "it-programming/web-development",
         "it-programming/data-science-1"
       ]
+    },
+    "kolabtree": {
+      "areas": [
+        "statistics",
+        "data analysis"
+      ]
     }
   },
   "commit": true,

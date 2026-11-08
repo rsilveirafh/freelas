@@ -2,8 +2,8 @@
   "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
   "name": "freelas",
   "displayName": "Freelas",
-  "version": "0.3.0",
-  "description": "Freela em várias plataformas sem garimpar projeto um por um: /freelas:coletar junta os projetos do 99freelas e da Freelancer.com (automático), do Upwork (MCP oficial, sob demanda) e da Workana (links para abrir), dá nota de 0 a 10 com base no seu perfil e registra tudo; /freelas:propor escreve valor, prazo e texto no formato de cada plataforma, só com fatos seus. O agente propõe, você decide e você envia.",
+  "version": "0.4.0",
+  "description": "Freela em várias plataformas sem garimpar projeto um por um: /freelas:coletar junta os projetos do 99freelas e da Freelancer.com (automático), do Upwork (MCP oficial, sob demanda), da Workana e do Kolabtree (links para abrir), dá nota de 0 a 10 com base no seu perfil e registra tudo; /freelas:propor escreve valor, prazo e texto no formato de cada plataforma, só com fatos seus. O agente propõe, você decide e você envia.",
   "author": {
     "name": "Ricardo Silveira",
     "url": "https://github.com/rsilveirafh"
@@ -11,5 +11,15 @@
   "homepage": "https://github.com/rsilveirafh/freelas",
   "repository": "https://github.com/rsilveirafh/freelas",
   "license": "MIT",
-  "keywords": ["freela", "freelancer", "99freelas", "upwork", "workana", "freelancer.com", "propostas", "renda-extra"]
+  "keywords": [
+    "freela",
+    "freelancer",
+    "99freelas",
+    "upwork",
+    "workana",
+    "freelancer.com",
+    "propostas",
+    "renda-extra",
+    "kolabtree"
+  ]
 }

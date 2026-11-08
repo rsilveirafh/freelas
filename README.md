@@ -1,6 +1,6 @@
 # freelas
 
-Um plugin do [Claude Code](https://claude.com/claude-code) para trabalhar como freelancer em várias plataformas sem abrir projeto por projeto: [99freelas](https://www.99freelas.com.br), [Freelancer.com](https://www.freelancer.com), [Upwork](https://www.upwork.com) e [Workana](https://www.workana.com). O agente junta os projetos, dá nota e escreve a proposta. Quem decide e envia é você.
+Um plugin do [Claude Code](https://claude.com/claude-code) para trabalhar como freelancer em várias plataformas sem abrir projeto por projeto: [99freelas](https://www.99freelas.com.br), [Freelancer.com](https://www.freelancer.com), [Upwork](https://www.upwork.com), [Workana](https://www.workana.com) e [Kolabtree](https://www.kolabtree.com). O agente junta os projetos, dá nota e escreve a proposta. Quem decide e envia é você.
 
 [English below](#english).
 
@@ -33,6 +33,7 @@ Cada plataforma é lida do jeito que os termos dela permitem. As regras, taxas e
 | Freelancer.com | **automática**: API pública de projetos, com filtro de orçamento mínimo em US$ |
 | Upwork | **sob demanda, pelo [MCP oficial](https://www.upwork.com/ai/mcp)**: a busca roda quando você pede. Os termos proíbem monitorar o site continuamente, então nada de coleta agendada |
 | Workana | **manual**: os termos proíbem robôs. A coleta mostra os links dos seus filtros; você abre e cola o que interessar para receber a nota |
+| Kolabtree | **manual**: os termos só permitem acesso pelos meios do site. A coleta mostra o link; você cola os projetos ou convites que interessarem. Ciência, estatística e saúde; o contrato é com o Kolabtree e o valor proposto chega inteiro (sem taxa de serviço) |
 | qualquer outra | cole o link ou o texto em `/freelas:coletar <texto>` e em `/freelas:propor <texto>` |
 
 ## Os comandos
@@ -115,9 +116,9 @@ MIT.
 
 ## English
 
-A [Claude Code](https://claude.com/claude-code) plugin for freelancing across several marketplaces: 99freelas (Brazil), Freelancer.com, Upwork and Workana. **The commands and prompts are in Portuguese.**
+A [Claude Code](https://claude.com/claude-code) plugin for freelancing across several marketplaces: 99freelas (Brazil), Freelancer.com, Upwork, Workana and Kolabtree. **The commands and prompts are in Portuguese.**
 
-- `/freelas:coletar` gathers new projects the way each platform's terms allow: 99freelas through its public listing, Freelancer.com through its public projects API, Upwork through the [official MCP server](https://www.upwork.com/ai/mcp) on demand only (no scheduled monitoring), and Workana through filter links you open yourself (its terms forbid bots). It scores each project from 0 to 10 against your profile and rules and logs everything in `projetos.md`.
+- `/freelas:coletar` gathers new projects the way each platform's terms allow: 99freelas through its public listing, Freelancer.com through its public projects API, Upwork through the [official MCP server](https://www.upwork.com/ai/mcp) on demand only (no scheduled monitoring), and Workana and Kolabtree through links you open yourself (their terms forbid automated access). It scores each project from 0 to 10 against your profile and rules and logs everything in `projetos.md`.
 - `/freelas:propor` breaks a project into hours, never prices below your net hourly floor, and writes the proposal in the platform's format and language using only facts from your profile. It never submits anything: you review and send.
 - With the [emprego](https://github.com/rsilveirafh/emprego) plugin, point `perfil_verdade` at your truth profile: proposals read facts from it, delivered projects become new facts, and gaps that sink 3+ projects in 14 days are flagged.
 

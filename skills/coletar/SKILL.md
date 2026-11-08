@@ -1,6 +1,6 @@
 ---
 name: coletar
-description: Coleta projetos abertos nas plataformas de freela da configuração (99freelas e Freelancer.com automáticos, Upwork pelo MCP oficial sob demanda, Workana por links para abrir à mão), dá nota de 0 a 10 com base no perfil e nas regras do projeto, e registra tudo em projetos.md para não aparecer de novo.
+description: Coleta projetos abertos nas plataformas de freela da configuração (99freelas e Freelancer.com automáticos, Upwork pelo MCP oficial sob demanda, Workana e Kolabtree por links para abrir à mão), dá nota de 0 a 10 com base no perfil e nas regras do projeto, e registra tudo em projetos.md para não aparecer de novo.
 argument-hint: "(vazio = todas as plataformas) | [plataforma ...] | [link ou texto de um projeto avulso]"
 disable-model-invocation: true
 allowed-tools: Read, Write, Edit, Glob, Grep, WebFetch, Bash(python *), Bash(py *), Bash(git *), mcp__upwork__*
@@ -11,7 +11,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep, WebFetch, Bash(python *), Bash(py 
 Leia `~/.claude/freelas-config.json`. Campos:
 - `projeto`: pasta do projeto (abaixo, `[proj]`);
 - `perfil_verdade`: arquivo com os fatos da carreira (opcional; vazio = seção "Fatos" de `[proj]/perfil.md`);
-- `plataformas`: um bloco por plataforma usada (`99freelas`, `freelancer`, `upwork`, `workana`), com os filtros de cada uma;
+- `plataformas`: um bloco por plataforma usada (`99freelas`, `freelancer`, `upwork`, `workana`, `kolabtree`), com os filtros de cada uma;
 - `idade_max_dias`: projetos mais antigos que isso ficam de fora;
 - `commit` e `mensagem_commit`: se e como commitar ao final.
 
@@ -33,6 +33,7 @@ Por plataforma, como diz o arquivo dela em `plataformas/`:
 - **99freelas e freelancer (automáticas):** rode `python -I "${CLAUDE_SKILL_DIR}/coletar.py" [plataformas]` (no Windows, se `python` não existir, `py -I`). O script pula o que já está em `projetos.md` e o que é mais antigo que `idade_max_dias`, e imprime o caminho do arquivo com os novos. Leia esse arquivo. Filtro que vier com 0 itens em todas as coletas: avise (pode estar sem projetos ou com slug ou termo errado).
 - **upwork (MCP, sob demanda):** se as ferramentas `mcp__upwork__*` estiverem disponíveis, faça uma busca por termo de `consultas`, só agora, a pedido do usuário. Pule as vagas cujo link já está em `projetos.md`, as mais antigas que `idade_max_dias` e as abaixo de `orcamento_min_usd`/`hora_min_usd`. Nunca agende nem repita a busca em laço: os termos proíbem monitoramento contínuo. Se o MCP não estiver instalado ou logado, mostre como instalar (arquivo da plataforma) e siga com as outras.
 - **workana (manual):** monte os links dos `filtros` e mostre-os para o usuário abrir. Os termos proíbem robôs: não baixe essas páginas. O que ele colar depois entra como projeto avulso.
+- **kolabtree (manual):** mostre o link da página de projetos e lembre dos convites por e-mail. Os termos só permitem acesso pelos meios do site: não baixe a página. O que ele colar entra como projeto avulso.
 
 ## Dar a nota
 
@@ -64,4 +65,4 @@ Se `commit` for true e `[proj]` estiver num repositório git: commit só dos arq
 
 ## Relatar
 
-Uma tabela só com os de nota 6 ou mais, da maior para a menor: `nota | plataforma | projeto | por quê (uma linha) | orçamento | propostas | quando abre`. Depois, em uma linha por plataforma, quantos vieram e quantos foram descartados (motivos mais comuns). Mostre os links da Workana, se houver. Se houver lacunas que se repetem, liste cada uma com a contagem e a saída sugerida. Termine com o próximo passo: `/freelas:propor <link ou nome>` para o melhor.
+Uma tabela só com os de nota 6 ou mais, da maior para a menor: `nota | plataforma | projeto | por quê (uma linha) | orçamento | propostas | quando abre`. Depois, em uma linha por plataforma, quantos vieram e quantos foram descartados (motivos mais comuns). Mostre os links da Workana e do Kolabtree, se estiverem na config. Se houver lacunas que se repetem, liste cada uma com a contagem e a saída sugerida. Termine com o próximo passo: `/freelas:propor <link ou nome>` para o melhor.
