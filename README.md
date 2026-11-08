@@ -32,6 +32,17 @@ O plugin cuida das duas pontas:
 | `/99freelas:propor <link ou nome>` | Horas por etapa, valor (sua oferta e o que o cliente vê com a taxa), duração e o texto de até 3000 caracteres, sem contato, sem link e sem promessa fora do perfil. Salva em `propostas/` |
 | `/99freelas:propor enviei <projeto>` | Marca como enviada em `projetos.md` |
 | `/99freelas:propor resultado <projeto> ganhei` | Registra o resultado (ganhei, perdi, sem resposta) |
+| `/99freelas:propor resultado <projeto> entreguei` | Transforma o projeto entregue num fato novo para o seu perfil, com a origem marcada, e sugere o que vai para o portfólio. Não grava sozinho: mostra o fato e o comando para registrar |
+
+## Ligação com o perfil-verdade
+
+Se você usa o plugin [emprego](https://github.com/rsilveirafh/emprego), aponte `perfil_verdade` na config para o seu perfil-verdade. A ligação vai nos dois sentidos, e o perfil-verdade continua tendo um só escritor, o `/emprego:perfil`:
+
+- **Do perfil para o freela:** a nota e a proposta só usam fatos de lá.
+- **Do freela para o perfil:** projeto entregue vira fato (`/99freelas:propor resultado <projeto> entreguei` mostra o fato pronto e o `/emprego:perfil` que o registra). Freela entregue passa a contar como evidência no currículo e nas candidaturas.
+- **Lacunas que se repetem:** cada projeto descartado guarda o motivo. Se a mesma lacuna derrubar 3 projetos ou mais em 14 dias, a coleta avisa e sugere declarar a lacuna (`/emprego:perfil lacuna: ...`), estudar ou pôr em "Não faço".
+
+Sem o plugin emprego, tudo isso acontece na seção "Fatos" e "Lacunas" do `perfil.md` do projeto.
 
 Os comandos não disparam sozinhos: só rodam quando você digita. **Nenhum deles faz login nem envia proposta.**
 
@@ -100,5 +111,6 @@ A [Claude Code](https://claude.com/claude-code) plugin for freelancing on [99fre
 
 - `/99freelas:coletar` reads the public project listing for the subcategories in your config (with a pause between requests, no login), skips what you have already seen and anything older than 15 days, scores each project from 0 to 10 against your profile and rules, and logs everything in `projetos.md`.
 - `/99freelas:propor` breaks a project into hours, never prices below your hourly floor, and writes the proposal (up to 3000 characters) using only facts from your profile. It never logs in or submits anything: you review and send.
+- With the [emprego](https://github.com/rsilveirafh/emprego) plugin, point `perfil_verdade` at your truth profile: proposals read facts from it, delivered projects become new facts (`propor resultado <project> entreguei`), and gaps that sink 3+ projects in 14 days are flagged.
 
 Install: `claude plugin marketplace add rsilveirafh/claude-plugins`, then `claude plugin install 99freelas@rsilveirafh-plugins`. Copy `projeto-template/` somewhere private, copy `config.example.json` to `~/.claude/99freelas-config.json`, and run `/99freelas:coletar`. MIT licensed.

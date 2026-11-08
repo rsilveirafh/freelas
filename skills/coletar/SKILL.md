@@ -41,7 +41,16 @@ Para cada projeto novo, aplique a tabela do `[proj]/CLAUDE.md` (padrão: aderên
 
 Em `[proj]/projetos.md`:
 - **Nota 6 ou mais:** uma linha na tabela (data | projeto com o link | área | orçamento | nota | por quê | status). Se `premium` for false, o status diz quando abre para conta gratuita: `abre AAAA-MM-DD HH:MM` (publicação + 24 h); se já abriu, `avaliar`.
-- **Nota 5 ou menos:** só o link e o título, numa linha da seção `## Descartados na coleta`, para o coletor não mostrar de novo.
+- **Nota 5 ou menos:** uma linha na seção `## Descartados na coleta`, para o coletor não mostrar de novo: `- AAAA-MM-DD · link · motivo`. O motivo é um só, o que mais pesou: `não faço: <item>`, `lacuna: <o que pediram e não tem evidência>`, `valor`, `escopo` ou `risco`. Use sempre o mesmo nome curto para a mesma lacuna (ex.: `lacuna: n8n`, não `n8n` numa e `automação n8n` noutra), porque é a contagem que acha o padrão.
+
+## Lacunas que se repetem
+
+Conte, nos descartados dos últimos 14 dias (os de hoje inclusive), os motivos `lacuna: <X>`. Para cada X que aparecer **3 vezes ou mais** e ainda não estiver em "Não faço" do CLAUDE.md, sugira (sem gravar) uma destas saídas:
+- **declarar como lacuna**: se `perfil_verdade` estiver na config, `/emprego:perfil lacuna: <X>`; senão, acrescentar na seção "Lacunas" de `[proj]/perfil.md`;
+- **estudar**: se o X aparece em projetos que pagariam bem, diga quantos e o que pediam;
+- **"Não faço"**: se o usuário não quer esse tipo de trabalho, acrescentar no CLAUDE.md para a coleta descartar direto.
+
+Se X já estiver declarado como lacuna, diga só a contagem: é sinal de demanda, útil para decidir o que estudar.
 
 ## Gravar
 
@@ -49,4 +58,4 @@ Se `commit` for true e `[proj]` estiver num repositório git: commit só dos arq
 
 ## Relatar
 
-Uma tabela só com os de nota 6 ou mais, da maior para a menor: `nota | projeto | por quê (uma linha) | propostas | quando abre`. Depois, em uma linha, quantos foram descartados e por quê (os motivos mais comuns). Termine com o próximo passo: `/99freelas:propor <link ou nome>` para o melhor.
+Uma tabela só com os de nota 6 ou mais, da maior para a menor: `nota | projeto | por quê (uma linha) | propostas | quando abre`. Depois, em uma linha, quantos foram descartados e por quê (os motivos mais comuns). Se houver lacunas que se repetem, liste cada uma com a contagem e a saída sugerida. Termine com o próximo passo: `/99freelas:propor <link ou nome>` para o melhor.

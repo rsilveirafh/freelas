@@ -1,7 +1,7 @@
 ---
 name: propor
-description: Escreve a proposta para um projeto do 99freelas (valor, prazo e texto de até 3000 caracteres) só com fatos do perfil, e registra o envio e o resultado em projetos.md. Não envia nada.
-argument-hint: "[link ou nome do projeto] | enviei [projeto] | resultado [projeto] [ganhei/perdi/sem resposta]"
+description: Escreve a proposta para um projeto do 99freelas (valor, prazo e texto de até 3000 caracteres) só com fatos do perfil, registra o envio e o resultado em projetos.md e, quando o projeto é entregue, transforma-o num fato novo para o perfil. Não envia nada.
+argument-hint: "[link ou nome do projeto] | enviei [projeto] | resultado [projeto] [ganhei/perdi/sem resposta/entreguei]"
 disable-model-invocation: true
 allowed-tools: Read, Write, Edit, Glob, Grep, WebFetch, Bash(git *)
 ---
@@ -38,9 +38,21 @@ Argumentos: $ARGUMENTS.
 
 Atualize o status em `projetos.md` para `enviada AAAA-MM-DD: R$ X, N dias`. Se o usuário mudou algo antes de enviar, atualize o arquivo em `propostas/` para ficar igual ao enviado.
 
-## Modo 3: "resultado [projeto] [ganhei/perdi/sem resposta]"
+## Modo 3: "resultado [projeto] [ganhei/perdi/sem resposta/entreguei]"
 
 Atualize o status. Se perdeu e o cliente disse o motivo, anote na linha. Se ganhou, lembre de combinar escopo, entregas e prazo por escrito na própria plataforma.
+
+### "entreguei": o projeto vira fato
+
+Projeto entregue é experiência nova, e ela só conta depois de entrar nos fatos.
+
+1. Pergunte o que faltar para escrever o fato: o que foi entregue de verdade (pode ter mudado desde a proposta), as ferramentas, o tipo de cliente (sem nome, se o CLAUDE.md proibir), as horas ou dias reais, a avaliação na plataforma, e se o cliente autoriza mostrar o trabalho no portfólio.
+2. Escreva o fato em uma linha, no formato dos fatos já existentes (marcas de origem inclusive, se o arquivo usar), ex.: `AAAA-MM: análise exploratória de vendas para cliente de varejo, em R, com relatório e painel; 20 dias [medido: projeto entregue no 99freelas]`. Nada que não aconteceu: se o número não tem origem, fica sem número.
+3. **Não grave no arquivo de fatos.** Mostre o fato e o caminho:
+   - se `perfil_verdade` estiver na config: `/emprego:perfil <o fato>` (o `/emprego:perfil` é o único que escreve no perfil-verdade, e ele confere com o usuário e propõe a mudança no currículo);
+   - senão: acrescentar na seção "Fatos" de `[proj]/perfil.md`, e só com o ok do usuário.
+4. Se o fato fecha algo que estava nas lacunas, diga qual.
+5. Se o cliente autorizou, sugira o que vai para a seção de portfólio da plataforma (prints sem dado do cliente). Anote na linha de `projetos.md`: `entregue AAAA-MM-DD; fato: proposto | gravado; portfólio: sim | não`.
 
 ## Gravar
 

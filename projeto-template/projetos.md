@@ -7,4 +7,4 @@ Uma linha por projeto com nota 6 ou mais. O link fica na linha para a coleta nã
 
 ## Descartados na coleta
 
-Nota 5 ou menos, sem proposta. Só o link e o título.
+Nota 5 ou menos, sem proposta. Uma linha por projeto: `- AAAA-MM-DD · link · motivo` (`não faço: X`, `lacuna: X`, `valor`, `escopo` ou `risco`).
